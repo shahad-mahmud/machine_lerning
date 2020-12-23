@@ -56,6 +56,7 @@ def draw_boxes(boxes, confidences, class_ids, classes, img, colors, confidence_t
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, confidence_threshold, NMS_threshold)
 
     FONT = cv2.FONT_HERSHEY_SIMPLEX
+    print('Number of objects: {}'.format(len(boxes)))
 
     if len(indexes) > 0:
         for i in indexes.flatten():
